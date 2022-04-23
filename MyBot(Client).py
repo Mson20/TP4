@@ -23,4 +23,12 @@ async def on_message(message):
     if message.content == "Ping":
         await message.channel.send("Pong")
 
-client.run("OTU5MzQ5MjY0ODMwNTgyODA0.YkaloA.3HXqDRA8L0cMkdDHFr2srQ1roXs")
+@client.event
+async def on_message(message):
+    if message.content.startswith("!del"):
+        number = int(message.content.split()[1])
+        messages = await message.channel.history(limit=number + 1).flatten()
+        for each_message in messages:
+            await each_message.delete()
+
+client.run("OTU5MzQ5MjY0ODMwNTgyODA0.YkaloA.Deq08h8Z38Rvbjm48LW3_P_cLXY")
