@@ -1,11 +1,13 @@
 import discord
 from discord.ext import commands
-
+import os
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="config")
 
 client = discord.Client()
-client.run("VOTRE TOKEN ICI")
+client.run(os.getenv("TOKEN"))
 bot = commands.Bot(command_prefix="$")
-bot.run("VOTRE TOKEN ICI")
+bot.run(os.getenv("TOKEN"))
 
 @bot.event
 async def on_ready():

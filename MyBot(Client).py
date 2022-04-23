@@ -1,5 +1,8 @@
 import discord
 from discord import Client
+import os
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="config")
 
 default_intents = discord.Intents.default()
 default_intents.members = True
@@ -31,4 +34,4 @@ async def on_message(message):
         for each_message in messages:
             await each_message.delete()
 
-client.run("VOTRE TOKEN ICI")
+client.run(os.getenv("TOKEN"))

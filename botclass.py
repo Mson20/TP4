@@ -1,10 +1,12 @@
 import discord
 from clients.bot2class import Botstart
-from cogs.greetings import Greetings
+from cogs.Bienvenue import Bienvenue
+import os
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="config")
 
 def main():
-    token = "OTU5MzQ5MjY0ODMwNTgyODA0.YkaloA.V66VtfB-z1q3qrPtGyBSjx5hBsI"
-
+    
 
     intents = discord.Intents.default()
     intents.members = True
@@ -14,9 +16,9 @@ def main():
         intents=intents
     )
 
-    bot.add_cog(Greetings(bot))
+    bot.add_cog(Bienvenue(bot))
 
-    bot.run(OTU5MzQ5MjY0ODMwNTgyODA0.YkaloA.V66VtfB-z1q3qrPtGyBSjx5hBsI)
+    bot.run(os.getenv("TOKEN"))
 
 
 if name == 'main':
