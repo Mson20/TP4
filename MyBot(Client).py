@@ -31,4 +31,4 @@ async def on_message(message):
         for each_message in messages:
             await each_message.delete()
 
-client.run("OTU5MzQ5MjY0ODMwNTgyODA0.YkaloA.Deq08h8Z38Rvbjm48LW3_P_cLXY")
+client.run("VOTRE TOKEN ICI")
