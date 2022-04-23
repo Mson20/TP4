@@ -4,14 +4,14 @@ from discord.ext import commands
 
 client = discord.Client()
 client.run("VOTRE TOKEN ICI")
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix="$")
 bot.run("VOTRE TOKEN ICI")
 
 @bot.event
 async def on_ready():
     print("Le bot est prêt.")
 
-@bot.command(name="del")
+@bot.command(name="testerase")
 async def delete(ctx, number: int):
     messages = await ctx.channel.history(limit=number + 1).flatten()
     
